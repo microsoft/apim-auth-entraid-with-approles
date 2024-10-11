@@ -7,11 +7,11 @@ Tags: Azure, EntraID, API Management
 
 # API Authentication with API Management (APIM) and Entra ID using APIM Policies 
 
-![GitHub](https://img.shields.io/github/license/marcosoikawa/apim-auth-entraid) 
-![GitHub repo size](https://img.shields.io/github/repo-size/marcosoikawa/apim-auth-entraid) 
+![GitHub](https://img.shields.io/github/license/microsoft/apim-auth-entraid-with-approles) 
+![GitHub repo size](https://img.shields.io/github/repo-size/microsoft/apim-auth-entraid-with-approles) 
 [![Azure](https://badgen.net/badge/icon/azure?icon=azure&label)](https://azure.microsoft.com)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/marcosoikawa/apim-auth-entraid)
+![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/apim-auth-entraid-with-approles)
 
 ## Scenario
 
@@ -314,7 +314,7 @@ And if you call now the /speakers endpoint with this Barear token, you should se
 
 - [Tutorial: Import and publish your first API](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish)
 
-- [API Management - Validate JWT Policy](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy).
+- [API Management - Validate JWT Policy](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy)
 
 ## Contributing
 
