@@ -15,8 +15,18 @@ Tags: Azure, EntraID, API Management
 
 ## Scenario
 
-The main objective of this LAB is to demonstrate how Azure API Management (APIM) can centralized authentication and authorizaton of APIs using Entra ID using APIM Policy (validate-jwt) and App Roles of Entra ID. This is very usefull when you have legacy APIs, APIs with no OAuth 2.0 / OIDC or even if you need to centralized management of authentication and authentication in one single pane of glass
+The main objective of this LAB is to demonstrate how Azure API Management (APIM) can centralized authentication and authorizaton of APIs using Entra ID using APIM Policy (validate-jwt) and App Roles of Entra ID. 
+This is very usefull when you have legacy APIs, APIs with no OAuth 2.0 / OIDC or even if you need to centralized management of authentication and authentication in one single pane 
+of glass
+
 ![Topology](./media/architecture1.png)
+
+## Architecture
+For this LAB, given a public API (Conference API), with 2 Operations (GetSessions and GetSpeakers) we will now add Authentication (AuthN) and Authorization (AuthZ), requiring a role of Admin to access GetSpeakers Operation, and role of Member to call GetSessions Operation of API.
+
+To do this, we will create 2 App Roles, APIMAuth.Admins and APIMAuth.Members, and assign users to this App Roles. In APIM, we will import the API and will create Policies (validate-jwt) for 2 operations: GetSpeakers and GetSessions. For GetSpeakers we will require APIMAuth.Admins App Role, and for GetSessions we will require APIMAuth.Members.
+
+![Topology](./media/architecture2.png)
 
 ## Prerequisites
 
