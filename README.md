@@ -179,7 +179,7 @@ You must have at least two users in your Microsoft Entra ID Tenant, to give one 
 1. In the Enterprise Application Pane, in Manage section, go to **Users and groups**, **+ Add user/group**, select a user and select just APIM.Members App Role. Click on Select, and then Assign.
 1. Do the seme for another user, including this time, the APIM.Admins and APIM.Members App Role. The configuration will be something similar to this:
 ![Enterprise Pane](./media/approles2.png)
-In this example, Marcos will have the "Admin" role, and Gabriel will have "Member" role.
+In this example, Marcos will have the "Admin" role, and Daniel will have "Member" role.
 
 ## Configure APIM According App Roles
 In this sample, we will consider that Members can list the sessions, but not list the Speakers. To do so, we will configure 2 operations policies, one for **GetSessions** operation, and another one for **GetSpeakers** operation.
