@@ -5,7 +5,7 @@ Description: This sample describes how Azure API Management (APIM) can centraliz
 Tags: Azure, EntraID, API Management
 ---
 
-# API Authentication with API Management (APIM) and Entra ID using APIM Policies 
+# API Authentication with API Management (APIM) using APIM Policies with Entra ID and App Roles 
 
 ![GitHub](https://img.shields.io/github/license/microsoft/apim-auth-entraid-with-approles) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/microsoft/apim-auth-entraid-with-approles) 
