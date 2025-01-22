@@ -90,6 +90,7 @@ After you import, lets uncheck the option of subscription required.
 
 1. Go to the API imported / All Operations / Settings tab.
 1. Uncheck "Subscription required"
+1. Click Save
 
 ![Topology](./media/no-subscription3.png)
 
