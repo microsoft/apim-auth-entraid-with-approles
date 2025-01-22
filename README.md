@@ -313,7 +313,7 @@ You shoud see a token with roles in the https://jwt.ms/:
 
 ![Enterprise Pane](./media/run09.png)
 
-And if you call now the /reset endpoint with this Barear token, you should see a 200 result.
+And if you call now the /reset endpoint with this Barear token, you should see a 201 result.
 
 ![Enterprise Pane](./media/run10.png)
 
