@@ -114,7 +114,7 @@ In the **Overview** blade, find and note the **Application (client) ID** and  **
 
 ### Expose the  API and Publish Delegated Permissions
 
-In the left menu, in Manage section, select the **Expose an API** blade
+In the left menu, in **Manage section**, select the **Expose an API** blade
 
 >This the page where you can publish the permission as an API for which client applications can obtain [access tokens](https://aka.ms/access-tokens) for. The first thing that we need to do is to declare the unique [resource](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow) URI that the clients will be using to obtain access tokens for this API. 
 
@@ -154,7 +154,7 @@ We will create two App Roles, one representing "Member Access", and other one re
 |Display name|APIMAuth.Members|
 |Allowed member types|Both (Users/Groups + Applications)|
 |Value|APIMAuth.Members|
-|Description|Allow users to access members permissions of API, whitch is: Can list only sessions|
+|Description|Allow users to access members permissions of API, whitch is: Can call **"Get random color"** operation|
 |Do you want to enable this app role?|checked|
 
 3. Select **Apply** to save your changes.
@@ -168,7 +168,7 @@ Repeat the steps above for another app permission named **APIMAuth.Admins**
 |Display name|APIMAuth.Admins|
 |Allowed member types|Both (Users/Groups + Applications)|
 |Value|APIMAuth.Admins|
-|Description|Allow users to access admin permissions of API, whicth is can list all sessions and speakers|
+|Description|Allow users to access admin permissions of API, whicth is can Post **"Reset colors"** operation|
 |Do you want to enable this app role?|checked|
 
 ## Giving users permissions
@@ -187,7 +187,7 @@ In this sample, we will consider that Members can list the sessions, but not lis
 ### GetSessions Operation Policy: Validade JWT
 
 1. In Azure Portal, go to API Management, click on instance created.
-1. In the left panel, go to API, click on API just imported, GetSessions operation. In Inbound policy, click on **+ Add policy**.
+1. In the left panel, go to API, click on API just imported, **"Get randon color"** operation. In Inbound policy, click on **+ Add policy**.
 ![Enterprise Pane](./media/apim3.png)
 1. Select "Validade JWT" Policy.
 
@@ -222,8 +222,8 @@ In this sample, we will consider that Members can list the sessions, but not lis
 Final result will be something smimilar to this:
 ![Enterprise Pane](./media/apim5.png)
 
-### GetSpeakers Operation Policy: Validade JWT
-Repeat the process with **GetSpeakers**, using **APIMAuth.Admins** Role.
+### "Reset colors" Operation Policy: Validade JWT
+Repeat the process for **Reset colors** operation, using **APIMAuth.Admins** Role.
 
 
 ## Run and Test
@@ -280,7 +280,7 @@ In my case, the user semedo@oikawa.dev.br was assigned just with APIMAuth.Member
 
 ![Enterprise Pane](./media/run05.png)
 
-### Calling Sesions Endpoint
+### Calling **"Get random color"** Endpoint
 
 Now you can call the API using this Barear token. 
 You can see the base endpoint your API in API Management / API / Conference API / Settings / Base URL
@@ -288,7 +288,7 @@ Get the base URL and add the /sessions and /speakers
 
 It will be something like: 
 
-**https://apim-auth-[yourRandom].azure-api.net/sessions**
+**https://apim-auth-[yourRandom].azure-api.net/colors/random**
 
 To call an API with a Barear token, just add a header Authorization with the value "Barear [your token]"
 
@@ -300,20 +300,20 @@ You shoud get and 200 with all sessions of the API.
 
 Now let's try to call the speakers endpoint:
 
-**https://apim-auth-[yourRandom].azure-api.net/speakers**
+**https://apim-auth-[yourRandom].azure-api.net/colors/reset**
 
 ![Enterprise Pane](./media/run08.png)
 
 You shoud get a 401 Unauthorized, with the message previously configured "Unauthorized due APIM Policy"
 
-### Calling Skeakers Endpoint with APIMAuth.Admins Role
+### Calling Post **"Reset colors"**  with APIMAuth.Admins Role
 
-Now Follow this steps of the section, using now the user you provide with APIMAuth.Admins role. Get the token with the user and call the /speakers endpoint.
+Now Follow this steps of the section, using now the user you provide with APIMAuth.Admins role. Get the token with the user and call the /reset endpoint.
 You shoud see a token with roles in the https://jwt.ms/:
 
 ![Enterprise Pane](./media/run09.png)
 
-And if you call now the /speakers endpoint with this Barear token, you should see a 200 result.
+And if you call now the /reset endpoint with this Barear token, you should see a 200 result.
 
 ![Enterprise Pane](./media/run10.png)
 
