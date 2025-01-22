@@ -62,7 +62,7 @@ az apim create --name $apim --resource-group $resourceGroup \
 ```
 
 ## Import an API in APIM
-For this demo, we will use Confere API (https://conferenceapi.azurewebsites.net), a backend API for demos proposed, provided by Microsoft. Use this guide [Tutorial: Import and publish your first API](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish) for more details if need to import API to your API Management.
+For this demo, we will use Colors API (https://colors-api.azurewebsites.net), a backend API for demos proposed, provided by Mark Harrison. Use this guide [Tutorial: Import and publish your first API](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish) for more details if need to import API to your API Management.
 
 
 1. In the Azure portal, search for and select API Management services.
@@ -71,18 +71,17 @@ For this demo, we will use Confere API (https://conferenceapi.azurewebsites.net)
 1. Select the **OpenAPI** tile.
 1. In the Create from OpenAPI specification window, select Full.
 1. Enter the values from the following table.
-1. Click Save
+1. Click Create
 
 ![Topology](./media/apim2.png)
 
 |Setting|Value|
 |-------|-----|
-|**OpenAPI specification**|*https:\//conferenceapi.azurewebsites.net?format=json*|
+|**OpenAPI specification**|*https:\//colors-api.azurewebsites.net/swagger/v1/swagger.json*|
 |**Display name**|After you enter the OpenAPI specification URL, API Management fills out this field based on the JSON.|
 |**Name**|After you enter the OpenAPI specification URL, API Management fills out this field based on the JSON.|
-|**Products**|**Unlimited**|
+|**Products**|**Unlimited** / **Starter**|
 |**Gateways**|**Managed**|
-|**Subscription required**|**Unchecked**|
 
 
 After you import, lets uncheck the option of subscription required. 
