@@ -182,12 +182,12 @@ You must have at least two users in your Microsoft Entra ID Tenant, to give one 
 In this example, Marcos will have the "Admin" role, and Daniel will have "Member" role.
 
 ## Configure APIM According App Roles
-In this sample, we will consider that Members can list the sessions, but not list the Speakers. To do so, we will configure 2 operations policies, one for **GetSessions** operation, and another one for **GetSpeakers** operation.
+In this sample, we will consider that Members can get random colors, but not reset colors. To do so, we will configure 2 operations policies, one for **Get random color** operation, and another one for **Reset colors** operation.
 
-### GetSessions Operation Policy: Validade JWT
+### "Get random color" Operation Policy: Validade JWT
 
 1. In Azure Portal, go to API Management, click on instance created.
-1. In the left panel, go to API, click on API just imported, **"Get randon color"** operation. In Inbound policy, click on **+ Add policy**.
+1. In the left panel, go to API, click on API just imported, **"Get random color"** operation. In Inbound policy, click on **+ Add policy**.
 ![Enterprise Pane](./media/apim3.png)
 1. Select "Validade JWT" Policy.
 
